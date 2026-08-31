@@ -3,18 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Astrocharacters</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #f4f1ea;
+      color: #171717;
+      font-family: Georgia, serif;
+    }
+
+    header {
+      padding: 30px 50px;
+      border-bottom: 1px solid #171717;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #171717;
+      text-decoration: none;
+      margin-left: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 100px auto;
+      padding: 0 30px;
+    }
+
+    .intro {
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 72px;
+      line-height: 0.95;
+      margin: 0 0 30px;
+    }
+
+    .intro p {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      margin-top: 100px;
+      border-bottom: 1px solid #171717;
+      padding-bottom: 15px;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .card {
+      margin-top: 25px;
+      padding: 30px;
+      border: 1px solid #171717;
+      background: #ebe7de;
+    }
+
+    .card h2 {
+      font-size: 36px;
+      margin: 0 0 10px;
+    }
+
+    .card p {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .zodiac {
+      font-size: 22px;
+    }
+
+    footer {
+      margin-top: 120px;
+      padding: 30px 50px;
+      border-top: 1px solid #171717;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Astrocharacters</h1>
+  <header>
+    <div class="logo">ASTROCHARACTERS</div>
 
-  <p>Astrology & fictional characters.</p>
+    <nav>
+      <a href="#">FILM</a>
+      <a href="#">SERIES</a>
+      <a href="#">ZODIAC</a>
+    </nav>
+  </header>
 
-  <h2>High Fidelity</h2>
 
-  <p>Rob Brooks — ♊ Gemelli</p>
+  <main>
+
+    <section class="intro">
+      <h1>Fictional characters,<br>read astrologically.</h1>
+
+      <p>
+        An archive of fictional characters, their personalities,
+        relationships and the zodiac signs that represent them.
+      </p>
+    </section>
+
+
+    <div class="section-title">
+      Featured
+    </div>
+
+
+    <section class="card">
+      <div class="zodiac">♊ GEMINI</div>
+
+      <h2>Rob Brooks</h2>
+
+      <p>
+        High Fidelity · 2020
+      </p>
+
+      <p>
+        A sharp conversationalist with an restless mind,
+        impossible to completely understand. Social, witty and
+        constantly overthinking, but emotionally much deeper
+        than she initially appears.
+      </p>
+    </section>
+
+  </main>
+
+
+  <footer>
+    ASTROCHARACTERS · Fictional characters × astrology
+  </footer>
 
 </body>
 </html>
