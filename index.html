@@ -2,219 +2,424 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Astrocharacters</title>
 
+
   <style>
+
+    /* =========================
+       GENERAL
+    ========================= */
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: #0d0d0d;
-      color: #eeeae2;
+      background: #11100f;
+      color: #e8e1d5;
       font-family: Georgia, "Times New Roman", serif;
     }
 
-    /* NAVIGATION */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     header {
       height: 90px;
-      padding: 0 5%;
+      padding: 0 5vw;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #292929;
+
+      border-bottom: 1px solid #393531;
     }
 
     .logo {
-      font-size: 18px;
-      letter-spacing: 3px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
     }
 
     nav {
       display: flex;
-      gap: 30px;
+      gap: 28px;
     }
 
     nav a {
-      color: #aaa59c;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 2px;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #eeeae2;
-    }
-
-
-    /* HERO */
-
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .eyebrow {
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 4px;
-      color: #77736c;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(60px, 10vw, 150px);
-      font-weight: normal;
-      line-height: 0.85;
-      letter-spacing: -5px;
-      margin: 0;
-    }
-
-    .hero h1 span {
-      font-style: italic;
-    }
-
-    .hero p {
-      max-width: 500px;
-      margin-top: 40px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      line-height: 1.8;
-      color: #99958d;
-    }
-
-
-    /* DIVIDER */
-
-    .divider {
-      width: 90%;
-      height: 1px;
-      background: #292929;
-      margin: auto;
-    }
-
-
-    /* EXPLORE */
-
-    .explore {
-      padding: 100px 5%;
-    }
-
-    .section-label {
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: #77736c;
-      text-transform: uppercase;
-      margin-bottom: 40px;
-    }
-
-    .explore-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid #292929;
-      border-left: 1px solid #292929;
-    }
-
-    .explore-card {
-      min-height: 180px;
-      padding: 30px;
-      border-right: 1px solid #292929;
-      border-bottom: 1px solid #292929;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background 0.3s ease;
-    }
-
-    .explore-card:hover {
-      background: #151515;
-    }
-
-    .explore-card .symbol {
-      font-size: 25px;
-      color: #aaa59c;
-    }
-
-    .explore-card h2 {
-      font-size: 25px;
-      font-weight: normal;
-      margin: 0;
-    }
-
-    .explore-card p {
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 1px;
-      color: #77736c;
-      text-transform: uppercase;
-    }
-
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid #292929;
-      padding: 35px 5%;
-      display: flex;
-      justify-content: space-between;
       font-family: Arial, sans-serif;
       font-size: 9px;
       letter-spacing: 2px;
-      color: #66635e;
+      color: #9d978d;
+
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #e8e1d5;
     }
 
 
-    /* MOBILE */
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 82vh;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 80px 20px;
+    }
+
+    .small-title {
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 5px;
+      color: #817b72;
+      text-transform: uppercase;
+
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size: clamp(65px, 11vw, 155px);
+      font-weight: normal;
+      line-height: 0.82;
+      letter-spacing: -7px;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-style: italic;
+      margin-left: 100px;
+    }
+
+    .hero-description {
+      max-width: 470px;
+
+      margin-top: 55px;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      line-height: 1.9;
+
+      color: #918c84;
+    }
+
+    .scroll {
+      margin-top: 70px;
+
+      font-family: Arial, sans-serif;
+      font-size: 8px;
+      letter-spacing: 3px;
+
+      color: #716c64;
+    }
+
+
+    /* =========================
+       DIVIDER
+    ========================= */
+
+    .line {
+      width: 90%;
+      height: 1px;
+
+      margin: auto;
+
+      background: #393531;
+    }
+
+
+    /* =========================
+       INTRODUCTION
+    ========================= */
+
+    .introduction {
+      width: 90%;
+      max-width: 1200px;
+
+      margin: 0 auto;
+      padding: 130px 0;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+    }
+
+    .section-number {
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: #716c64;
+    }
+
+    .introduction h2 {
+      margin: 30px 0 0;
+
+      font-size: 48px;
+      font-weight: normal;
+      line-height: 1;
+    }
+
+    .introduction h2 span {
+      font-style: italic;
+    }
+
+    .introduction-text {
+      align-self: end;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      line-height: 2;
+
+      color: #9b958b;
+    }
+
+
+    /* =========================
+       EXPLORE
+    ========================= */
+
+    .explore {
+      width: 90%;
+      max-width: 1200px;
+
+      margin: auto;
+      padding-bottom: 140px;
+    }
+
+    .explore-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      margin-bottom: 35px;
+    }
+
+    .explore-header h2 {
+      margin: 0;
+
+      font-size: 38px;
+      font-weight: normal;
+    }
+
+    .explore-header p {
+      margin: 0;
+
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #716c64;
+    }
+
+
+    /* =========================
+       CATEGORY GRID
+    ========================= */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      border-top: 1px solid #393531;
+      border-left: 1px solid #393531;
+    }
+
+    .category {
+      min-height: 260px;
+
+      padding: 35px;
+
+      border-right: 1px solid #393531;
+      border-bottom: 1px solid #393531;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: 0.4s;
+    }
+
+    .category:hover {
+      background: #191816;
+    }
+
+    .category-number {
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #716c64;
+    }
+
+    .category-symbol {
+      position: absolute;
+
+      top: 20px;
+      right: 30px;
+
+      font-size: 55px;
+      font-weight: normal;
+
+      color: #292724;
+    }
+
+    .category h3 {
+      margin: 0;
+
+      font-size: 42px;
+      font-weight: normal;
+    }
+
+    .category p {
+      margin: 8px 0 0;
+
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 1px;
+
+      color: #777169;
+    }
+
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote {
+      width: 90%;
+      max-width: 1200px;
+
+      margin: 0 auto 140px;
+
+      padding: 100px 40px;
+
+      text-align: center;
+
+      border-top: 1px solid #393531;
+      border-bottom: 1px solid #393531;
+    }
+
+    .quote p {
+      max-width: 800px;
+
+      margin: auto;
+
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.15;
+      font-weight: normal;
+    }
+
+    .quote p span {
+      font-style: italic;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 5vw;
+
+      border-top: 1px solid #393531;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-family: Arial, sans-serif;
+      font-size: 8px;
+      letter-spacing: 2px;
+
+      color: #67625b;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 700px) {
 
       header {
         height: auto;
-        padding: 25px 6%;
+        padding: 25px 6vw;
+
         flex-direction: column;
         gap: 20px;
       }
 
       nav {
-        gap: 18px;
+        gap: 17px;
       }
 
       .hero {
-        min-height: 65vh;
+        min-height: 75vh;
       }
 
       .hero h1 {
         font-size: 65px;
-        letter-spacing: -3px;
+        letter-spacing: -4px;
       }
 
-      .explore-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .hero h1 span {
+        margin-left: 45px;
       }
 
-      .explore-card {
-        min-height: 150px;
-        padding: 20px;
+      .introduction {
+        grid-template-columns: 1fr;
+        gap: 50px;
+
+        padding: 90px 0;
+      }
+
+      .introduction h2 {
+        font-size: 40px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category {
+        min-height: 210px;
+      }
+
+      .quote {
+        padding: 70px 20px;
       }
 
       footer {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
       }
 
     }
@@ -227,6 +432,8 @@
 <body>
 
 
+  <!-- NAVIGATION -->
+
   <header>
 
     <div class="logo">
@@ -234,110 +441,233 @@
     </div>
 
     <nav>
+
       <a href="#">FILMS</a>
       <a href="#">SERIES</a>
       <a href="#">ZODIAC</a>
       <a href="#">MBTI</a>
+
     </nav>
 
   </header>
 
 
-  <main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="small-title">
+      Fictional characters · astrology · personality
+    </div>
+
+    <h1>
+      Astro
+      <span>characters</span>
+    </h1>
+
+    <div class="hero-description">
+
+      An archive exploring fictional characters
+      through astrology, personality and the stories
+      they leave behind.
+
+    </div>
+
+    <div class="scroll">
+      SCROLL TO EXPLORE ↓
+    </div>
+
+  </section>
 
 
-    <section class="hero">
 
-      <div class="eyebrow">
-        Fictional characters · astrology · personality
+  <div class="line"></div>
+
+
+
+  <!-- INTRODUCTION -->
+
+  <section class="introduction">
+
+    <div>
+
+      <div class="section-number">
+        01 / THE ARCHIVE
       </div>
 
-      <h1>
-        Astro<span>characters</span>
-      </h1>
+      <h2>
+        Characters are more than
+        <span>their stories.</span>
+      </h2>
+
+    </div>
+
+
+    <div class="introduction-text">
+
+      Astrocharacters is an evolving archive of
+      fictional characters, exploring personality,
+      relationships and identity through astrology
+      and personality systems.
+
+      <br><br>
+
+      Every character is interpreted through a
+      combination of observation, symbolism and
+      personal analysis.
+
+    </div>
+
+  </section>
+
+
+
+  <!-- EXPLORE -->
+
+  <section class="explore">
+
+    <div class="explore-header">
+
+      <h2>Explore</h2>
 
       <p>
-        Exploring the personalities, relationships and inner worlds
-        of fictional characters through astrology and personality types.
+        CHOOSE YOUR WAY IN
       </p>
 
-    </section>
+    </div>
 
 
-    <div class="divider"></div>
+    <div class="category-grid">
 
 
-    <section class="explore">
+      <a href="#" class="category">
 
-      <div class="section-label">
-        Explore the archive
-      </div>
+        <div class="category-number">
+          01
+        </div>
 
+        <div class="category-symbol">
+          ◇
+        </div>
 
-      <div class="explore-grid">
+        <div>
 
+          <h3>Films</h3>
 
-        <div class="explore-card">
-
-          <div class="symbol">✦</div>
-
-          <div>
-            <h2>Films</h2>
-            <p>Explore characters from cinema</p>
-          </div>
+          <p>
+            CHARACTERS FROM CINEMA
+          </p>
 
         </div>
 
+      </a>
 
-        <div class="explore-card">
 
-          <div class="symbol">◌</div>
 
-          <div>
-            <h2>Series</h2>
-            <p>Explore characters from television</p>
-          </div>
+      <a href="#" class="category">
+
+        <div class="category-number">
+          02
+        </div>
+
+        <div class="category-symbol">
+          ◌
+        </div>
+
+        <div>
+
+          <h3>Series</h3>
+
+          <p>
+            CHARACTERS FROM TELEVISION
+          </p>
 
         </div>
 
+      </a>
 
-        <div class="explore-card">
 
-          <div class="symbol">☾</div>
 
-          <div>
-            <h2>Zodiac</h2>
-            <p>Characters by zodiac sign</p>
-          </div>
+      <a href="#" class="category">
+
+        <div class="category-number">
+          03
+        </div>
+
+        <div class="category-symbol">
+          ☾
+        </div>
+
+        <div>
+
+          <h3>Zodiac</h3>
+
+          <p>
+            CHARACTERS BY ASTROLOGY
+          </p>
 
         </div>
 
+      </a>
 
-        <div class="explore-card">
 
-          <div class="symbol">∞</div>
 
-          <div>
-            <h2>MBTI</h2>
-            <p>Characters by personality type</p>
-          </div>
+      <a href="#" class="category">
+
+        <div class="category-number">
+          04
+        </div>
+
+        <div class="category-symbol">
+          ∞
+        </div>
+
+        <div>
+
+          <h3>MBTI</h3>
+
+          <p>
+            CHARACTERS BY PERSONALITY
+          </p>
 
         </div>
 
-
-      </div>
-
-    </section>
+      </a>
 
 
-  </main>
+    </div>
 
+  </section>
+
+
+
+  <!-- QUOTE -->
+
+  <section class="quote">
+
+    <p>
+
+      “Every character leaves something
+      <span>behind.</span>”
+
+    </p>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
 
   <footer>
 
-    <span>ASTROCHARACTERS</span>
+    <span>
+      ASTROCHARACTERS
+    </span>
 
-    <span>FICTIONAL CHARACTERS × PERSONALITY</span>
+    <span>
+      FICTIONAL CHARACTERS × PERSONALITY
+    </span>
 
   </footer>
 
