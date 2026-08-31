@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,151 +8,340 @@
   <title>Astrocharacters</title>
 
   <style>
-    body {
-      margin: 0;
-      background: #f4f1ea;
-      color: #171717;
-      font-family: Georgia, serif;
+
+    * {
+      box-sizing: border-box;
     }
 
+    body {
+      margin: 0;
+      background: #0d0d0d;
+      color: #eeeae2;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    /* NAVIGATION */
+
     header {
-      padding: 30px 50px;
-      border-bottom: 1px solid #171717;
+      height: 90px;
+      padding: 0 5%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #292929;
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
     }
 
     nav a {
-      color: #171717;
+      color: #aaa59c;
       text-decoration: none;
-      margin-left: 25px;
       font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 100px auto;
-      padding: 0 30px;
-    }
-
-    .intro {
-      max-width: 700px;
-    }
-
-    h1 {
-      font-size: 72px;
-      line-height: 0.95;
-      margin: 0 0 30px;
-    }
-
-    .intro p {
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .section-title {
-      margin-top: 100px;
-      border-bottom: 1px solid #171717;
-      padding-bottom: 15px;
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
+      font-size: 11px;
       letter-spacing: 2px;
-      font-size: 13px;
+      transition: color 0.3s ease;
     }
 
-    .card {
-      margin-top: 25px;
-      padding: 30px;
-      border: 1px solid #171717;
-      background: #ebe7de;
+    nav a:hover {
+      color: #eeeae2;
     }
 
-    .card h2 {
-      font-size: 36px;
-      margin: 0 0 10px;
+
+    /* HERO */
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
     }
 
-    .card p {
+    .eyebrow {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #77736c;
+      margin-bottom: 30px;
+      text-transform: uppercase;
     }
 
-    .zodiac {
-      font-size: 22px;
+    .hero h1 {
+      font-size: clamp(60px, 10vw, 150px);
+      font-weight: normal;
+      line-height: 0.85;
+      letter-spacing: -5px;
+      margin: 0;
     }
+
+    .hero h1 span {
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 500px;
+      margin-top: 40px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #99958d;
+    }
+
+
+    /* DIVIDER */
+
+    .divider {
+      width: 90%;
+      height: 1px;
+      background: #292929;
+      margin: auto;
+    }
+
+
+    /* EXPLORE */
+
+    .explore {
+      padding: 100px 5%;
+    }
+
+    .section-label {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #77736c;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #292929;
+      border-left: 1px solid #292929;
+    }
+
+    .explore-card {
+      min-height: 180px;
+      padding: 30px;
+      border-right: 1px solid #292929;
+      border-bottom: 1px solid #292929;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.3s ease;
+    }
+
+    .explore-card:hover {
+      background: #151515;
+    }
+
+    .explore-card .symbol {
+      font-size: 25px;
+      color: #aaa59c;
+    }
+
+    .explore-card h2 {
+      font-size: 25px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .explore-card p {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: #77736c;
+      text-transform: uppercase;
+    }
+
+
+    /* FOOTER */
 
     footer {
-      margin-top: 120px;
-      padding: 30px 50px;
-      border-top: 1px solid #171717;
+      border-top: 1px solid #292929;
+      padding: 35px 5%;
+      display: flex;
+      justify-content: space-between;
       font-family: Arial, sans-serif;
-      font-size: 12px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #66635e;
     }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      header {
+        height: auto;
+        padding: 25px 6%;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav {
+        gap: 18px;
+      }
+
+      .hero {
+        min-height: 65vh;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+        letter-spacing: -3px;
+      }
+
+      .explore-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .explore-card {
+        min-height: 150px;
+        padding: 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
+
   <header>
-    <div class="logo">ASTROCHARACTERS</div>
+
+    <div class="logo">
+      ASTROCHARACTERS
+    </div>
 
     <nav>
-      <a href="#">FILM</a>
+      <a href="#">FILMS</a>
       <a href="#">SERIES</a>
       <a href="#">ZODIAC</a>
+      <a href="#">MBTI</a>
     </nav>
+
   </header>
 
 
   <main>
 
-    <section class="intro">
-      <h1>Fictional characters,<br>read astrologically.</h1>
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        Fictional characters · astrology · personality
+      </div>
+
+      <h1>
+        Astro<span>characters</span>
+      </h1>
 
       <p>
-        An archive of fictional characters, their personalities,
-        relationships and the zodiac signs that represent them.
+        Exploring the personalities, relationships and inner worlds
+        of fictional characters through astrology and personality types.
       </p>
+
     </section>
 
 
-    <div class="section-title">
-      Featured
-    </div>
+    <div class="divider"></div>
 
 
-    <section class="card">
-      <div class="zodiac">♊ GEMINI</div>
+    <section class="explore">
 
-      <h2>Rob Brooks</h2>
+      <div class="section-label">
+        Explore the archive
+      </div>
 
-      <p>
-        High Fidelity · 2020
-      </p>
 
-      <p>
-        A sharp conversationalist with an restless mind,
-        impossible to completely understand. Social, witty and
-        constantly overthinking, but emotionally much deeper
-        than she initially appears.
-      </p>
+      <div class="explore-grid">
+
+
+        <div class="explore-card">
+
+          <div class="symbol">✦</div>
+
+          <div>
+            <h2>Films</h2>
+            <p>Explore characters from cinema</p>
+          </div>
+
+        </div>
+
+
+        <div class="explore-card">
+
+          <div class="symbol">◌</div>
+
+          <div>
+            <h2>Series</h2>
+            <p>Explore characters from television</p>
+          </div>
+
+        </div>
+
+
+        <div class="explore-card">
+
+          <div class="symbol">☾</div>
+
+          <div>
+            <h2>Zodiac</h2>
+            <p>Characters by zodiac sign</p>
+          </div>
+
+        </div>
+
+
+        <div class="explore-card">
+
+          <div class="symbol">∞</div>
+
+          <div>
+            <h2>MBTI</h2>
+            <p>Characters by personality type</p>
+          </div>
+
+        </div>
+
+
+      </div>
+
     </section>
+
 
   </main>
 
 
   <footer>
-    ASTROCHARACTERS · Fictional characters × astrology
+
+    <span>ASTROCHARACTERS</span>
+
+    <span>FICTIONAL CHARACTERS × PERSONALITY</span>
+
   </footer>
 
+
 </body>
+
 </html>
